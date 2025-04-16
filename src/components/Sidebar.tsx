@@ -1,11 +1,12 @@
 
 import { Home, BarChart2, Settings, LogOut, Landmark, Bolt, BadgeDollarSign, HandCoins, ScanEye, ShieldHalf, Logs, History, ChartCandlestick} from "lucide-react";
 import '../Css/Sidebar.css'
+import { Link } from "react-router-dom";
 
 const links = [
-  { name: "Dashboard", icon: <Home />, path: "#" },
-  { name: "Finance", icon: <Landmark />, path: "#" },
-  { name: "Controls", icon: <Bolt />, path: "#" },
+  { name: "Dashboard", icon: <Home />, path: "/" },
+  { name: "Finance", icon: <Landmark />, path: "/finance" },
+  { name: "Controls", icon: <Bolt />, path: "/control" },
   { name: "Sales", icon: <BadgeDollarSign />, path: "#" },
   { name: "Profits", icon: <HandCoins />, path: "#" },
   { name: "Orders", icon: <Logs />, path: "#" },
@@ -24,7 +25,7 @@ export default function Sidebar() {
     <>
       
       {/* Desktop Sidebar */}
-      <aside className="hidden md:flex flex-col bg-green-700 text-white lg:w-54 w-auto h-screen p-4 space-y-6 overflow-y-auto scrollbar-hide">
+      <aside className="hidden md:flex flex-col bg-black text-white lg:w-54 w-auto h-screen p-4 space-y-6 overflow-y-auto scrollbar-hide">
         <h1 className="text-md font-bold text-center">Admin-Dashboad</h1>
         <div className="flex justify-center">
           
@@ -33,13 +34,14 @@ export default function Sidebar() {
          {/* <h2 className="text-center text-sm">Muhammad Riyan</h2> */}
         <ul className="space-y-4 mt-3">
           {links.map((link) => (
+           <Link to={link.path}>
             <li
               key={link.name}
               className="flex items-center gap-3 hover:text-black hover:bg-orange-500 p-2 hover:shadow rounded cursor-pointer"
             >
               {link.icon}
               {link.name}
-            </li>
+            </li></Link>
           ))}
         </ul>
       </aside>
