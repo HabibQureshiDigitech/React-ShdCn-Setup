@@ -30,7 +30,7 @@ export function UserForm() {
     },
   })
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
+  function onSubmit() {
     toast("Event has been created", {
       description: "Sunday, December 03, 2023 at 9:00 AM",
       action: {

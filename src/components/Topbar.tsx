@@ -15,9 +15,14 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar"
 
-export default function Topbar({ toggleSidebar }) {
+interface TopbarProps {
+  toggleSidebar: () => void;
+}
+
+export default function Topbar ({ toggleSidebar }: TopbarProps) {
   const [open, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
 
   const links = [
     { name: "Dashboard", icon: <Home />, path: "#" },
