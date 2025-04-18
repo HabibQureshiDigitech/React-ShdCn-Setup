@@ -1,4 +1,4 @@
-import { BadgeDollarSign, BarChart2, Bell, Bolt, ChartCandlestick, HandCoins, History, Home, Landmark, LogOut, Logs, Menu, MessageSquareDot, ScanEye, Settings, ShieldHalf, User } from "lucide-react";
+import { BadgeDollarSign, BarChart2, Bell, Bolt, ChartCandlestick, HandCoins, History, Home, LogOut, Logs, Menu, MessageSquareDot, ScanEye, Settings, ShieldHalf, User } from "lucide-react";
 import {
   Sheet,
   SheetTrigger,
@@ -14,6 +14,7 @@ import {
   MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar"
+import { Link } from "react-router-dom";
 
 interface TopbarProps {
   toggleSidebar: () => void;
@@ -25,9 +26,9 @@ export default function Topbar ({ toggleSidebar }: TopbarProps) {
 
 
   const links = [
-    { name: "Dashboard", icon: <Home />, path: "#" },
-    { name: "Finance", icon: <Landmark />, path: "#" },
-    { name: "Controls", icon: <Bolt />, path: "#" },
+    { name: "Dashboard", icon: <Home />, path: "/" },
+    { name: "Users", icon: <User />, path: "/finance" },
+    { name: "Controls", icon: <Bolt />, path: "/control" },
     { name: "Sales", icon: <BadgeDollarSign />, path: "#" },
     { name: "Profits", icon: <HandCoins />, path: "#" },
     { name: "Orders", icon: <Logs />, path: "#" },
@@ -63,6 +64,7 @@ export default function Topbar ({ toggleSidebar }: TopbarProps) {
               <h2 className="text-xl font-bold mb-6">Dashboard</h2>
               <ul className="space-y-4">
                 {links.map((link) => (
+                  <Link to={link.path}>
                   <li
                     key={link.name}
                     className="flex items-center gap-3 hover:text-green-300 cursor-pointer"
@@ -70,6 +72,7 @@ export default function Topbar ({ toggleSidebar }: TopbarProps) {
                     {link.icon}
                     {link.name}
                   </li>
+                  </Link>
                 ))}
               </ul>
             </SheetContent>

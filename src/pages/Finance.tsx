@@ -16,12 +16,12 @@ export default function Finance() {
     <div className="felx text-end mb-5">
     <button onClick={handleClick} className="bg-black text-white text-sm rounded p-2 active:scale-110">
         {
-            Changed ? "Add Data" : "Back to Table"
+            Changed ?  "Back to Table":"Add Data"
         }
     </button>
     </div>
     {
-      Changed ?  <UserTable /> : <UserForm />
+      Changed ? <UserForm />  : <UserTable />
     }
       
     </div>

@@ -1,11 +1,11 @@
 
-import { Home, BarChart2, Settings, LogOut, Landmark, Bolt, BadgeDollarSign, HandCoins, ScanEye, ShieldHalf, Logs, History, ChartCandlestick} from "lucide-react";
+import { Home, BarChart2, Settings, LogOut, Bolt, BadgeDollarSign, HandCoins, ScanEye, ShieldHalf, Logs, History, ChartCandlestick, User2} from "lucide-react";
 import '../Css/Sidebar.css'
 import { Link } from "react-router-dom";
 
 const links = [
   { name: "Dashboard", icon: <Home />, path: "/" },
-  { name: "Finance", icon: <Landmark />, path: "/finance" },
+  { name: "Users", icon: <User2 />, path: "/finance" },
   { name: "Controls", icon: <Bolt />, path: "/control" },
   { name: "Sales", icon: <BadgeDollarSign />, path: "#" },
   { name: "Profits", icon: <HandCoins />, path: "#" },
